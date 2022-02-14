@@ -5,16 +5,27 @@
    class Personnage{
        public $force = 100;
        private $degat;
+       private $exp = 1;
+       public $vie = 80;
 
-       public function attaquer(){
-           echo 'Je vais attaquer';
+       public $nom;
+
+       public function __construct($nom){
+           $this->nom = $nom;
+       }
+
+       public function regenerer(){
+           $this->vie = 100;
        }
    }
 
    //creer un objet
-   $emma = new Personnage();
+   $emma = new Personnage("Emma");
+   $ramata = new Personnage("Ramata");
 
-   //affichage
-   var_dump($emma->force)
+   $emma->regenerer();
+
+   echo 'vie de '. $emma->nom.' est '. $emma->vie;
+   echo 'vie de '. $ramata->nom.' est '. $ramata->vie;
 
 ?>
