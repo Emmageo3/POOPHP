@@ -1,28 +1,20 @@
-
 <?php
 
-    //creer une classe personne  
-    class Person
-    {
-        var $firstName;
-        var $lastName;
-        var $age;
 
-        public function __construct($firstName, $lastName, $age){
-            $this->firstname = $firstName;
-            $this->lastname = $lastName;
-            $this->age = $age;
-        }
+    //creer une classe
+   class Personnage{
+       public $force = 100;
+       private $degat;
 
-        public function fullName(){
-            echo $this->firstname . ' ' . $this->lastname;
-        }
-    }
+       public function attaquer(){
+           echo 'Je vais attaquer';
+       }
+   }
 
-    //instancier la classe 
-    $emma = new Person('Emma', 'Kanfany', 21);
-    $seyna = new Person('Seynabou', 'Dione', 22);
-    $seyna->fullName();
+   //creer un objet
+   $emma = new Personnage();
 
+   //affichage
+   var_dump($emma->force)
 
 ?>
