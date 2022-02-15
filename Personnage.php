@@ -25,6 +25,44 @@
             //renvoie les constantes de classe PERSONNAGE_TUE et PERSONNAGE_FRAPPE
         }
 
+
+        //getters pour lire les valeurs des attributs
+        public function degats(){
+            return $this->degats;
+        }
+
+        public function id(){
+            return $this->id;
+        }
+
+        public function nom(){
+            return $this->nom;
+        }
+
+
+        //setters pour modifier les valeurs des attributs
+        public function setDegats($degats){
+             $degats = (int) $degats;
+
+             if($degats >= 0 && $degats <= 100){
+                 $this->degats = $degats;
+             }
+        }
+
+        public function setId($id){
+            $id = (int) $id;
+
+            if($id > 0){
+                $this->id = $id;
+            }
+        }
+
+        public function setNom($nom){
+            if(is_string($nom)){
+                $this->nom = $nom;
+            }
+        }
+
     }
 
 ?>
