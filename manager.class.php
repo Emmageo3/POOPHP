@@ -10,7 +10,6 @@ class PersonnagesManager {
     $q = $this->_db->prepare('INSERT INTO personnages(nom) VALUES(:nom)');
     $q->bindValue(':nom', $perso->nom());
     $q->execute();
-    
     $perso->hydrate([
       'id' => $this->_db->lastInsertId(),
       'degats' => 0,
